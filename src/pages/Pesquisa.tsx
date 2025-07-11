@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -8,12 +7,11 @@ const Pesquisa = () => {
   return (
     <div style={{
       margin: 0,
-      padding: 0,
+      padding: '20px',
       boxSizing: 'border-box',
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      minHeight: '100vh',
-      padding: '20px'
+      minHeight: '100vh'
     }}>
       <div style={{
         maxWidth: '800px',
