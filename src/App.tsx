@@ -7,7 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Presidente from "./pages/Presidente";
 import Governadores from "./pages/Governadores";
+import GovernadorDetalhes from "./pages/GovernadorDetalhes";
 import Denuncia from "./pages/Denuncia";
+import Sobre from "./pages/Sobre";
+import Estatisticas from "./pages/Estatisticas";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,7 +25,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/presidente" element={<Presidente />} />
           <Route path="/governadores" element={<Governadores />} />
+          <Route path="/governador/:estado" element={<GovernadorDetalhes />} />
           <Route path="/denuncia" element={<Denuncia />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/estatisticas" element={<Estatisticas />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
