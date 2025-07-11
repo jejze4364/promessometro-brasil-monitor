@@ -25,6 +25,16 @@ const Denuncia = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validação: se há descrição, deve ter fonte
+    if (formData.descricao.trim() && !formData.fonte.trim()) {
+      toast({
+        title: "Fonte obrigatória",
+        description: "Por favor, forneça uma fonte ou evidência para sua descrição detalhada.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
     // Simulação de envio
     toast({
       title: "Cobrança enviada com sucesso!",
@@ -178,6 +188,11 @@ const Denuncia = () => {
                       rows={6}
                       required
                     />
+                    {formData.descricao.trim() && (
+                      <p className="text-sm text-amber-600 bg-amber-50 p-2 rounded">
+                        ⚠️ Uma fonte ou evidência é obrigatória para descrições detalhadas
+                      </p>
+                    )}
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
@@ -196,13 +211,21 @@ const Denuncia = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="fonte">Fonte/Evidência (opcional)</Label>
+                      <Label htmlFor="fonte">
+                        Fonte/Evidência {formData.descricao.trim() && <span className="text-red-500">*</span>}
+                      </Label>
                       <Input
                         id="fonte"
                         placeholder="Link para notícia, documento oficial, etc."
                         value={formData.fonte}
                         onChange={(e) => handleInputChange('fonte', e.target.value)}
+                        required={formData.descricao.trim() !== ""}
                       />
+                      {formData.descricao.trim() && (
+                        <p className="text-xs text-red-600">
+                          Obrigatório quando há descrição detalhada
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -291,7 +314,8 @@ const Denuncia = () => {
                   💡 Dica Importante
                 </h3>
                 <p className="text-sm text-orange-700">
-                  Quanto mais detalhes e fontes você fornecer, mais rápida será a verificação da sua cobrança.
+                  Quanto mais detalhes e fontes você fornecer, mais rápida será a verificação da sua cobrança. 
+                  <strong> Descrições detalhadas devem sempre incluir uma fonte confiável.</strong>
                 </p>
               </CardContent>
             </Card>
