@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -52,13 +51,28 @@ const HeroSection = () => {
             O <strong>Promessômetro Brasil</strong> é uma plataforma digital inovadora que promove a transparência e accountability democrática no país. Nossa missão é acompanhar, monitorar e avaliar o cumprimento das promessas feitas por políticos durante campanhas eleitorais e mandatos.
           </p>
           
-          <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+          <div style={{ 
+            textAlign: 'center', 
+            marginBottom: '30px',
+            display: 'flex',
+            gap: '20px',
+            justifyContent: 'center',
+            flexWrap: 'wrap'
+          }}>
             <Button 
               onClick={() => navigate('/dashboard')}
               className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold px-8 py-6 text-lg rounded-full"
               size="lg"
             >
-              Acessar o nosso prótotipo
+              Acessar o nosso protótipo
+            </Button>
+            
+            <Button 
+              onClick={() => navigate('/formulario')}
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-6 text-lg rounded-full"
+              size="lg"
+            >
+              Responder Formulário
             </Button>
           </div>
 
