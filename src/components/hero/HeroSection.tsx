@@ -68,11 +68,16 @@ const HeroSection = () => {
             </Button>
             
             <Button 
-              onClick={() => navigate('/PersonalData')}
+              onClick={() => {
+                const surveyForm = document.getElementById('surveyForm');
+                if (surveyForm) {
+                  surveyForm.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-6 text-lg rounded-full"
               size="lg"
             >
-              Responder Formulário
+              Responder o Formulário
             </Button>
           </div>
 
