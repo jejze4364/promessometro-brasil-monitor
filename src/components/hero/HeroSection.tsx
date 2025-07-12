@@ -68,7 +68,7 @@ const HeroSection = () => {
             </Button>
             
             <Button 
-              onClick={() => navigate('/formulario')}
+              onClick={() => navigate('/PersonalData')}
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-6 text-lg rounded-full"
               size="lg"
             >
