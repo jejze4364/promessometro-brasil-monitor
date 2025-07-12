@@ -58,7 +58,7 @@ const HeroSection = () => {
               className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold px-8 py-6 text-lg rounded-full"
               size="lg"
             >
-              Acessar o Promessômetro Brasil
+              Acessar o nosso prótotipo
             </Button>
           </div>
 
